@@ -14,9 +14,22 @@ from app.core.config import settings
 
 app = FastAPI(title="CAR ADDA API", version="1.0.0")
 
+import re
+
+ALLOWED_ORIGINS = [
+    settings.FRONTEND_URL,                     # e.g. https://caradda-frontend.vercel.app
+    "https://caradda-frontend.vercel.app",     # primary Vercel domain
+    "http://localhost:5173",                   # local dev
+    "http://localhost:5174",
+]
+
+# Also accept any Vercel preview deployment URL for this project
+ALLOWED_ORIGIN_REGEX = r"https://caradda-frontend.*\.vercel\.app"
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.FRONTEND_URL],
+    allow_origins=ALLOWED_ORIGINS,
+    allow_origin_regex=ALLOWED_ORIGIN_REGEX,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

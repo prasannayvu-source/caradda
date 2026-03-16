@@ -51,7 +51,7 @@ The backend handles the connections to your Supabase database, handles logins, c
    - **VARIABLE NAME:** `JWT_SECRET`
      - **VALUE:** `(Your JWT secret)`
    - **VARIABLE NAME:** `FRONTEND_URL`
-     - **VALUE:** *Leave this just as `http://localhost:5173` for now. We will change this in Part 3!*
+     - **VALUE:** `https://caradda-frontend.vercel.app` ← set this IMMEDIATELY, do not leave as localhost
      
 3. After adding these variables, Railway is smart and will automatically start rebuilding your site correctly. 
 
