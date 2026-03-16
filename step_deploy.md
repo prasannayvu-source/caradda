@@ -80,13 +80,8 @@ The frontend is the visual interface (the buttons, charts, and pages) that you i
    - **Root Directory:** Click the "Edit" button here. Select the `frontend` folder from the popup list and click "Continue".
 2. **Build and Output Settings:** Leave these as the defaults (`npm run build` and `dist`).
 
-### Step 2.3: Link the Frontend to the Backend
-1. On the same page, click to open the **Environment Variables** dropdown section.
-2. We need to tell the frontend exactly where the Railway backend lives:
-   - **NAME:** `VITE_API_URL`
-   - **VALUE:** `https://(THE_LINK_YOU_COPIED_FROM_RAILWAY_IN_STEP_1.4)/api/v1`
-     - *Example of what it should look like: `https://caradda-production.up.railway.app/api/v1`*
-3. Click **Add**.
+### Step 2.3: Zero Configuration Architecture
+*You do NOT need to set any environment variables in Vercel!* The application code has been smart-wired to automatically securely route all live traffic directly directly to your Railway server through Vercel's proxy edge network. This solves problems specifically with strict Internet Service Providers (like Jio Fiber) blocking Railway domains.
 
 ### Step 2.4: Deploy!
 1. Click the big **Deploy** button at the bottom of the page.
